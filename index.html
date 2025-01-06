@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Mehta Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #4A90E2, #FF6600); /* Blue to Orange gradient */
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: white; /* Ensuring the header text color contrasts with the background */
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-container a {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+            border: 2px solid #007bff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+        }
+
+        .image-container a:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-container a:hover:after {
+            opacity: 1;
+        }
+
+        form input, form textarea, form button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #FF6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .personal-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-top: -100px;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+
+            form input, form textarea, form button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="myimage.jpeg" alt="Harsh Mehta" class="personal-image">
+        <h1>Harsh Mehta Portfolio</h1>
+        <p>Hi, I am Harsh Mehta. This is my personal portfolio. I specialize in branding, content creation, and am proficient in Photoshop, Illustrator, and Premiere Pro.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#work">My Work</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am passionate about branding and creating engaging content. With expertise in design tools like Photoshop, Illustrator, and Premiere Pro, I help bring creative ideas to life.</p>
+    </section>
+
+    <section id="work">
+        <h2>My Work</h2>
+        <div class="image-container">
+            <a href="#lightbox1">
+                <img src="image1.jpg" alt="Project 1">
+            </a>
+            <a href="#lightbox2">
+                <img src="image2.jpg" alt="Project 2">
+            </a>
+            <a href="#lightbox3">
+                <img src="image3.jpg" alt="Project 3">
+            </a>
+            <a href="#lightbox4">
+                <img src="image4.jpg" alt="Project 4">
+            </a>
+            <a href="#lightbox4">
+                <img src="image5.jpg" alt="Project 5">
+            </a>
+            <a href="#lightbox4">
+                <img src="image6.jpg" alt="Project 6">
+            </a>
+            <a href="#lightbox4">
+                <img src="image7.jpg" alt="Project 7">
+            </a>
+            <a href="#lightbox4">
+                <img src="image8.jpg" alt="Project 8">
+            </a>
+            <a href="#lightbox4">
+                <img src="image9.jpg" alt="Project 9">
+            </a>
+            <a href="#lightbox4">
+                <img src="image10.jpg" alt="Project 10">
+            </a>
+
+            <!-- Add more images as needed -->
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox1" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image1.jpg" alt="Project 1">
+        </div>
+        <div id="lightbox2" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image2.jpg" alt="Project 2">
+        </div>
+        <div id="lightbox3" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image3.jpg" alt="Project 3">
+        </div>
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image4.jpg" alt="Project 4">
+        </div>
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image5.jpg" alt="Project 5">
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image6.jpg" alt="Project 6">
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image7.jpg" alt="Project 7">
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image8.jpg" alt="Project 8">
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image9.jpg" alt="Project 9">
+        <div id="lightbox4" class="lightbox">
+            <span class="lightbox-close" onclick="window.location.href = '#'">×</span>
+            <img src="image10.jpg" alt="Project 10">
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Harsh Mehta</p>
+    </footer>
+</body>
+</html>
